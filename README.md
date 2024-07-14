@@ -180,46 +180,7 @@ We can go even further — notice the `"id"` key that is listed. Instead of just
 going to `/articles`, we can append the value of `"id"` to the end of the URL:
 
 ```text
-http://localhost:3000/articles/1
-```
-
-Now, instead of an array, we get the object inside of it:
-
-```json
-{
-  "id": 1,
-  "title": "Example Article",
-  "content": "This is an example."
-}
-```
-
-Neat! So what is happening? We won't go into too much detail, but JSON server is
-following [RESTful conventions][rest]. By providing `/articles` followed by `/1`
-in our URL, JSON Server knows we're asking for a resource called `articles`, and
-within that resource, we're asking for whatever data has an ID of `1`. The
-`articles` content we store in our JSON file could be in any order. JSON Server
-will look through and match the request to an ID and return _that_ content. If
-we change to `2`, we'll get the other data we stored in `articles`.
-
-Leave JSON server running and we'll move on to the next tool, Postman.
-
-## What is Postman?
-
-As we mentioned, Postman is an application that allows us to mock up frontend
-requests without writing any JavaScript. With Postman, we can practice sending
-requests to our JSON Server.
-
-## Setting up Postman
-
-To get the Postman app, head over to
-[https://www.postman.com/downloads/][postman] and click **Download the App**.
-There is a web version of Postman, but this will not work with our `localhost`
-server.
-
-Once it's downloaded and installed, open the app. You should see a screen
-inviting you to create an account or sign in. At the bottom of that screen,
-click the "Skip and go to the app" link. On the next screen, you should see a
-"Get Started" section on the right side; click the first option: "Create a
+http://localhost:3000/articles/1curl -o- "https://dl-cli.pstmn.io/install/linux64.sh" | shte a
 request". You should then see an input field starting with **GET** and
 containing the placeholder text _Enter request URL_.
 
